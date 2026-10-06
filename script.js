@@ -1,24 +1,17 @@
 function indexOfIgnoreCase(s1, s2) {
   // write your code here
-	if(str.length == 0 || subStr.length == 0){
+	if(s2.length == 0){
         return 0;
     }
-    let s1 = str.toLowerCase();
-    let s2 = subStr.toLowerCase();
-    let resultIndex = 0;
-    let j=0;
-    let count = 0;
-    for(let i=0; i<s1.length; i++){
-        if(s1.charAt(i) === s2.charAt(j)){
-            resultIndex = i;
-            count++;
-            j++;
-        }
-        
+    if(s1.length == 0){
+        return -1;
     }
-    if(count == s2.length){
-        return resultIndex-count+1;
+    let pool = s1.toLowerCase();
+    let target = s2.toLowerCase();
+    if(pool.includes(target)){
+        return pool.indexOf(target);
     }
+    // console.log(pool.includes(target));
     return -1;
 }
 
